@@ -1,0 +1,121 @@
+<!-- 
+Copyright 2014 Google Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Author:  Stephen Nicholls, March 10, 2014
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About the YouTube Geo Search Tool</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+
+  <body>
+    <div id="aboutDisplay">
+      <a href="search.html" style="float: right">back to search</a>
+      <h2>About the YouTube Geo Search Tool</h2>
+      <p>
+        This reference implementation was developed as a simple model of how News organizations could use Google APIs
+        to help find citizen journalism on YouTube. It uses <a
+        href="https://developers.google.com/youtube/v3/docs/search/list">YouTube</a> and <a
+        href="https://developers.google.com/maps/documentation/javascript/">Google</a> APIs to generate location based
+        search results which are stack ranked by upload time. The code is open-source so that others can build from
+        it. If you do use it to find videos for your stories, please <a
+        href="https://www.youtube.com/yt/press/media.html">give attribution</a> to the uploader and YouTube in the
+        aired footage. Thanks!
+      </p>
+      <p>
+        <b class="aboutPageBold">Getting Started</b>
+      </p>
+      <p>
+        Try searching on a location you are interested with a wide location radius (e.g. 100km). If this gives too
+        many irrelevant results then filter down by timestamp, radius or by adding keywords to the top search box
+        (e.g. fire, explosion, tornado).
+      </p>
+      <p>
+        <b class="aboutPageBold">Helpful Hints</b>
+      </p>
+      <ul>
+        <li>
+          <span class="aboutPageHeader">Turn Auto Translate On for Your Browser</span> -
+          If you are using Chrome then follow <a
+          href="https://support.google.com/chrome/answer/173424?p=ib_translation_bar&rd=1">the instructions to turn on
+          translation</a> on for your browser. Auto-translate will prompt you to auto-translate a page if it detects
+          foreign text.
+        </li>
+        <li>
+          <span class="aboutPageHeader">Use Google Translate when entering keywords</span> - In areas where you do not
+          know the base language, use <a href='https://translate.google.com/'>Google Translate</a> to translate
+          keywords and then enter those into the keyword field. Note for location you will not need to do this as the
+          geo-encoder is just looking up latitude and longitude coordinates (and is not itself a search term).
+        </li>
+        <li>
+          <span class="aboutPageHeader">Use the News Agency Filter</span> - Apply the News Agency filter to remove
+          uploads from common News channels so more citizen journalism videos surface in the results.
+        </li>
+        <li>
+          <span class="aboutPageHeader">Try Reverse Image Search</span> - To assist with validation click the "reverse
+          image search" link to display what image search results are returned based on the thumbnail image.
+        </li>
+        <li>
+          <span class="aboutPageHeader">Non location-based searches</span> - If the search results are sparse or
+          non-existent then this is probably because there are no geo-tagged videos for that location and radius.
+          Instead, append the location to the keywords in the keyword box and leave the location and location radius
+          blank, this will search across all videos (not just geo-tagged ones) but won't provide map results.
+        </li>
+      </ul>
+      <p>
+        <b class="aboutPageBold">More Details on Filters</b>
+      </p>
+      <ul>
+        <li><span class="aboutPageHeader">Keywords</span> - The keyword filter can be helpful when you receive too
+          many diverse results. By adding keywords to a geo location search you can narrow the results to just that
+          topic. Consequently using words "fire, explosion, drone, tornado" can help focus results on what you are
+          interested in.
+        <li><span class="aboutPageHeader">News Agencies</span></span> - Based on a list of 17,000 News agency
+          channels, we developed a filter which can either (1) remove videos from these channels in the results (2)
+          only pull videos from these channels (3) keep all the results regardless of channel source.
+        </li>
+        <li><span class="aboutPageHeader">Location</span> - The location search box geo-codes text entries into
+          latitude and longitude coordinates and then searches using the YouTube APIs. Please note that only a small
+          percentage of videos are geo-tagged and this search will only query those videos. The geo-tag coordinates
+          are generally the upload location, so the actual location of where the video was shot may differ.
+        <li><span class="aboutPageHeader">Creative Commons Only Results</span> - This filter allows you to surface
+          videos currently with a creative commons liscense. To learn more about the Creative Common liscense <a
+            href="https://support.google.com/youtube/answer/2797468?hl=en">here</a>.
+        </li>
+        <li><span class="aboutPageHeader">Embeddable Only Results</span> - This filter will only display videos that
+          are enabled to be embedded. Learn more <a
+            href="https://developers.google.com/youtube/v3/docs/search/list#videoEmbeddable">here</a>
+        </li>
+        <li><span class="aboutPageHeader">Live Only Results</span> - This filter will only display live streams. Learn
+          more <a href="https://developers.google.com/youtube/v3/docs/search/list#eventType">here</a>
+        </li>
+      </ul>
+      <p>
+        <b class="aboutPageBold">Known Issues</b>
+      </p>
+      <ul>
+        <li><span class="aboutPageHeader">Overlapping Markers</span> - If two videos have the same coordinates only
+          one map marker will show (so not all map markers will appear on the map).
+        </li>
+      </ul>
+      <p>
+        Happy Searching!
+      </p>
+    </div>
+  </body>
+</html>
