@@ -1,0 +1,225 @@
+/**
+ * Copyright 2014 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ *  @author:  Stephen Nicholls, March 10, 2014
+ */
+
+html {
+  height: 100%
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("jt_background.png");
+  font-family: Arial, sans-serif;
+}
+
+a:link {
+  color: #ddf;
+  font-size: 16px;
+}
+
+a:visited {
+  color: #aaa
+}
+
+a:hover {
+  color: #00c
+}
+
+a {
+  display: inline-block;
+  max-width: 300px;
+}
+
+#topSearchDisplay {
+  color: white;
+  margin: 20px;
+  padding: 5px;
+  width: 1050px;
+  font-size: 22px;
+}
+
+#searchFiltersDisplay {
+  color: white;
+  border-width: thin;
+  border-style: solid;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 10px 10px 10px 10px;
+  width: 1020px;
+}
+
+#searchLocation {
+  float: left;
+  height: 30px;
+  width: 400px;
+  border: 1px solid black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0px 10px 0px;
+}
+
+#timeWindow {
+  float: left;
+  height: 50px;
+  width: 200px;
+  border: 1px solid black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0px 10px 0px;
+}
+
+#startDate {
+  height: 20px;
+  width: 100px;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+#endDate {
+  height: 20px;
+  width: 100px;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+#query {
+  height: 20px;
+  width: 250px;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+#locRadius {
+  height: 20px;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+#newsChannelFilter {
+  height: 20px;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+#channelList {
+  height: 20px;
+  width: 250px;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+#search-button {
+  float: left;
+  background-image: linear-gradient(#8A8988, #636362);
+  border-radius: 10px 10px 10px 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  height: 50px;
+  width: 100px;
+  font-size: 18px;
+  color: white;
+}
+
+#search-button:hover {
+  background-image: linear-gradient(#636362, #8A8988);
+}
+
+#search-button:active {
+  background-image: linear-gradient(#8A8988, #636362);
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+#searchResultCount {
+  margin: 20px;
+  color: white;
+  float: right;
+}
+
+.video-content {
+  width: 500px;
+  float: left;
+  position: relative;
+  border-width: thin;
+  border-style: solid;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px 10px 10px 10px;
+  color: white;
+
+}
+
+#map-canvas {
+  width: 500px;
+  height: 500px;
+  float: left;
+  position: relative;
+  border-width: thin;
+  border-style: solid;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px 10px 10px 10px;
+  color: white;
+}
+
+.showErrors {
+  margin: 20px;
+  color: red;
+}
+
+#aboutDisplay {
+  color: white;
+  margin: 14px;
+  padding: 5px;
+  width: 1050px;
+}
+
+#aboutDisplay > a:link {
+  color: #fff;
+}
+
+.aboutPageBold {
+  color: #FFFFCC;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.aboutPageHeader {
+  color: #6699FF;
+  font-size: 14px;
+}
+
+.tooltip {
+  display: none;
+  font-size: 12px;
+  height: 70px;
+  width: 160px;
+  padding: 25px;
+  color: #eee;
+}
