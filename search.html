@@ -25,11 +25,10 @@ Author:  Stephen Nicholls, March 10, 2014
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YouTube Geo Search Tool</title>
+    <title>Geo Search Tool</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="js/news_channel_list.js"></script>
     <script src="js/search.js"></script>
   </head>
 
@@ -141,10 +140,10 @@ Author:  Stephen Nicholls, March 10, 2014
             <td>Radius
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
-            <td>News Agencies
+            <td>Channels to Search On
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
-            <td>Channels to Search On
+            <td>
             </td>
           </tr>
           <tr>
@@ -167,16 +166,11 @@ Author:  Stephen Nicholls, March 10, 2014
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
-              <select id='newsChannelFilter' title='Use to filter results from News Agencies either in or out'>
-                <option value="noFilter">No Filter</option>
-                <option value="newsOnly">Include News Channels Only</option>
-                <option value="excludeNews">Exclude News Channels</option>
-              </select>
+              <input id='channelList' value='' type="text" width="100"
+                     title='Enter comma separated list of channels to search exclusively on'>
             </td>
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td>
-              <input id='channelList' value='' type="text" width="100"
-                     title='Enter comma separated list of channels to search exclusively on'>
             </td>
           </tr>
         </table>
