@@ -302,7 +302,6 @@ function clickedSearchButton() {
   inputObject.inputEmbedsOnly = $('#embedOnly').is(':checked');
   inputObject.inputLiveOnly = $('#liveOnly').is(':checked');
   inputObject.inputCreativeCommonsOnly = $('#creativeCommonsOnly').is(':checked');
-  inputObject.inputNewsChannelFilter = $('#newsChannelFilter').val();
   inputObject.inputZoomLevel = INITIAL_ZOOM_LEVEL;
 
   //complete input object
@@ -365,12 +364,7 @@ function completeInputObject() {
     validationErrors = true;
   }
 
-  //set booleans on whether to include news channel results or not
-  if (inputObject.inputNewsChannelFilter === "newsOnly") {
-    inputObject.newsChannelsOnly = true;
-  } else if (inputObject.inputNewsChannelFilter === "excludeNews") {
-    inputObject.removeNewsChannel = true;
-  }
+  
 
   //if errors exist, display them on interface and terminate execution there
   if (validationErrors) {
@@ -430,8 +424,7 @@ function generateURLwithQueryParameters() {
       "&ed=" + inputObject.inputEndDate + "&cl=" + inputObject.inputChannelList +
       "&sl=" + inputObject.inputSearchLocation + "&eo=" + inputObject.inputEmbedsOnly +
       "&loo=" + inputObject.inputLiveOnly + "&cco=" + inputObject.inputCreativeCommonsOnly +
-      "&ncf=" + inputObject.inputNewsChannelFilter + "&zl=" + inputObject.inputZoomLevel +
-      "&pbt=" + publishBeforeTime;
+      "&zl=" + inputObject.inputZoomLevel + "&pbt=" + publishBeforeTime;
   } else {
     parameterString =
       "?q=" + inputObject.inputQuery + "&la=" + inputObject.inputLat +
@@ -440,8 +433,7 @@ function generateURLwithQueryParameters() {
       "&cl=" + inputObject.inputChannelList +
       "&sl=" + inputObject.inputSearchLocation + "&eo=" + inputObject.inputEmbedsOnly +
       "&loo=" + inputObject.inputLiveOnly + "&cco=" + inputObject.inputCreativeCommonsOnly +
-      "&ncf=" + inputObject.inputNewsChannelFilter + "&zl=" + inputObject.inputZoomLevel +
-      "&pbt=" + publishBeforeTime;
+      "&zl=" + inputObject.inputZoomLevel + "&pbt=" + publishBeforeTime;
   }
 
   //Retrieve the domain from the existing URL, to construct the new URL
@@ -927,27 +919,12 @@ function getLocationSearchResults() {
   });
 }
 
-/**  This function is used to filter results a News publisher is probably not interested in (e.g. car ads )
- *  and videos from other News publishers (NOTE this can be toggled on and off in the UI)
+/**  This function is used to filter results a News publisher is probably not interested in (e.g. car ads)
  */
 function filterIrrelevantResults() {
   finalResults2 = $.grep(finalResults, function(item) {
-    // If any of these expression return true, then the item will be
-    // filtered out of the final results.
-    if (CAR_REGEX.test(item.title)) {
-      return true;
-    }
-
-    if (inputObject.removeNewsChannel && (item.channelID in window.youTubeNewsChannelList)) {
-      return true;
-    }
-
-    if (inputObject.newsChannelsOnly && !(item.channelID in window.youTubeNewsChannelList)) {
-      return true;
-    }
-
-    return false;
-  }, true);
+    return !CAR_REGEX.test(item.title);
+  });
 }
 
 /**  This function prints the inputObject which is useful for debugging

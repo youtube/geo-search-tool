@@ -29,7 +29,8 @@ body {
 }
 
 a:link {
-  color: #ddf
+  color: #ddf;
+  font-size: 16px;
 }
 
 a:visited {
@@ -50,6 +51,7 @@ a {
   margin: 20px;
   padding: 5px;
   width: 1050px;
+  font-size: 22px;
 }
 
 #searchFiltersDisplay {
@@ -73,7 +75,7 @@ a {
   border-radius: 10px;
   font-size: 18px;
   padding: 10px;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 0px 10px 0px;
 }
 
 #timeWindow {
@@ -87,7 +89,7 @@ a {
   border-radius: 10px;
   font-size: 18px;
   padding: 10px;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 0px 10px 0px;
 }
 
 #startDate {

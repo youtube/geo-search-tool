@@ -19,14 +19,14 @@ Author:  Stephen Nicholls, March 10, 2014
 <!DOCTYPE html>
 <html>
   <head>
-    <title>About the YouTube Geo Search Tool</title>
+    <title>About the Geo Search Tool</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 
   <body>
     <div id="aboutDisplay">
       <a href="search.html" style="float: right">back to search</a>
-      <h2>About the YouTube Geo Search Tool</h2>
+      <h2>About the Geo Search Tool</h2>
       <p>
         This reference implementation was developed as a simple model of how News organizations could use Google APIs
         to help find citizen journalism on YouTube. It uses <a
@@ -63,10 +63,6 @@ Author:  Stephen Nicholls, March 10, 2014
           geo-encoder is just looking up latitude and longitude coordinates (and is not itself a search term).
         </li>
         <li>
-          <span class="aboutPageHeader">Use the News Agency Filter</span> - Apply the News Agency filter to remove
-          uploads from common News channels so more citizen journalism videos surface in the results.
-        </li>
-        <li>
           <span class="aboutPageHeader">Try Reverse Image Search</span> - To assist with validation click the "reverse
           image search" link to display what image search results are returned based on the thumbnail image.
         </li>
@@ -78,22 +74,24 @@ Author:  Stephen Nicholls, March 10, 2014
         </li>
       </ul>
       <p>
-        <b class="aboutPageBold">More Details on Filters</b>
+        <b class="aboutPageBold">More Details</b>
       </p>
       <ul>
+        <li><span class="aboutPageHeader">Search</span> - Search is conducted via YouTube APIs.   Search results are stack
+			ranked by publish date (latest first).  When a location is entered in the location field, we conduct a geo search which only applies
+			to videos that have geo-tagging turned on.  Likewise, we apply a couple filters to help remove non-News results (e.g. auto reviews).
+        </li>		  
         <li><span class="aboutPageHeader">Keywords</span> - The keyword filter can be helpful when you receive too
           many diverse results. By adding keywords to a geo location search you can narrow the results to just that
           topic. Consequently using words "fire, explosion, drone, tornado" can help focus results on what you are
           interested in.
-        <li><span class="aboutPageHeader">News Agencies</span></span> - Based on a list of 17,000 News agency
-          channels, we developed a filter which can either (1) remove videos from these channels in the results (2)
-          only pull videos from these channels (3) keep all the results regardless of channel source.
         </li>
-        <li><span class="aboutPageHeader">Location</span> - The location search box geo-codes text entries into
+		<li><span class="aboutPageHeader">Location</span> - The location search box geo-codes text entries into
           latitude and longitude coordinates and then searches using the YouTube APIs. Please note that only a small
           percentage of videos are geo-tagged and this search will only query those videos. The geo-tag coordinates
           are generally the upload location, so the actual location of where the video was shot may differ.
-        <li><span class="aboutPageHeader">Creative Commons Only Results</span> - This filter allows you to surface
+        </li>
+		<li><span class="aboutPageHeader">Creative Commons Only Results</span> - This filter allows you to surface
           videos currently with a creative commons liscense. To learn more about the Creative Common liscense <a
             href="https://support.google.com/youtube/answer/2797468?hl=en">here</a>.
         </li>
