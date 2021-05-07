@@ -343,7 +343,7 @@ function completeInputObject() {
 
 
   //define regular expressions for validating input values
-  var dateRegEx = new RegExp("[0-1][0-9][-][0-3][0-9][-][2][0][0-1][0-9]");
+  var dateRegEx = new RegExp("[0-1][0-9][-][0-3][0-9][-][2][0][0-2][0-9]");
   var numberRegEx = new RegExp("^[0-9]+")
 
   //Validate that location and location radius are set to conduct search
